@@ -1,0 +1,62 @@
+<p>
+    Find how many users wouldn't receive your email if some nodes get crushed.
+</p>
+
+<p>
+    <strong>Input: </strong> Four arguments. Network structure (as list of connections between nodes), users on each node (as dict where keys are node-name and values are amount of users), name of node that sends email, list of crashed nodes.
+</p>
+
+<p>
+    <strong>Output: </strong> Int. Amount of users that wouldn't receive an email.
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Example:</strong>
+    </p>
+<pre class="brush: python">
+disconnected_users([
+    ['A', 'B'],
+    ['B', 'C'],
+    ['C', 'D']
+], {
+    'A': 10,
+    'B': 20,
+    'C': 30,
+    'D': 40
+},
+    'A', ['C']) == 70
+
+disconnected_users([
+    ['A', 'B'],
+    ['B', 'D'],
+    ['A', 'C'],
+    ['C', 'D']
+], {
+    'A': 10,
+    'B': 0,
+    'C': 0,
+    'D': 40
+},
+    'A', ['B']) == 0
+
+disconnected_users([
+    ['A', 'B'],
+    ['A', 'C'],
+    ['A', 'D'],
+    ['A', 'E'],
+    ['A', 'F']
+], {
+    'A': 10,
+    'B': 10,
+    'C': 10,
+    'D': 10,
+    'E': 10,
+    'F': 10
+},
+    'C', ['A']) == 50
+
+</pre>
+</div>
