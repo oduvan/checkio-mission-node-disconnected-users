@@ -78,7 +78,6 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
             var ord = 0;
             var [net, users, source, crush] = dataInp,
                 nodes = {};
-            console.log(net, users, source, crush);
 
             for (var i=0; i < net.length; i += 1) {
                 for (var j=0; j < 2; j+=1) {
@@ -283,8 +282,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                     return;
                 }
                 var expl = data.ext.explanation;
-                //$expl.addClass('error').addClass('output').html(expl[0]);
-                $expl.addClass('output').html(expl[0]);
+                $expl.addClass('output').html('<div>' + expl[0] + '</div>');
                 disconnectedUsersCanvas(
                     $expl[0],
                     data.in,
