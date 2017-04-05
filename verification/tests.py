@@ -107,7 +107,7 @@ TESTS = {
                         'E': 10,
                         'F': 10
                     },
-                        'A', ['A', 'C']],
+                        'A', ['B', 'C']],
             "answer": 20,
             "explanation": "Node A is in the center of network. Since the message goes from this node only crashed nodes didn't get a message."
         }
