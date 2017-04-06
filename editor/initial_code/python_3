@@ -1,7 +1,4 @@
 def disconnected_users(net, users, source, crushes):
-    """
-        sums two passed arguments
-    """
     return 0
 
 if __name__ == '__main__':

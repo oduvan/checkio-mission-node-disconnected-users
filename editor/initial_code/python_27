@@ -1,8 +1,5 @@
-def sum_two(a, b):
-    """
-        sums two passed arguments
-    """
-    return None
+def disconnected_users(net, users, source, crushes):
+    return 0
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
