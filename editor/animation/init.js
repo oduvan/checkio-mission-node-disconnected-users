@@ -50,6 +50,10 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                         net_dic[n2] = union(net_dic[n2] || [], [n1]);
                     }
                 });
+
+                if (intersection([source], crushes).length)
+                    return all_nodes
+
                 var next_nodes = net_dic[source] || [];
                 var live_nodes = union(next_nodes, [source]);
                 while (next_nodes.length) {
@@ -184,8 +188,11 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
             const dead_nodes = disconnectedUsers(net, users, source, crush);
 
             // prepare Source Node
-            circleSet[nodes[source].num].attr({'fill': color.orange});
-            var src_nodes = [source];
+            var src_nodes = [];
+            if (intersection([source], crush).length == 0) {
+                circleSet[nodes[source].num].attr({'fill': color.orange});
+                src_nodes = [source];
+            }
 
             // start send mail
             var phase = 1;
