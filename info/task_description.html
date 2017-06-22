@@ -29,6 +29,51 @@
     <p>
         <strong>Example:</strong>
     </p>
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: python">
+disconnectedUsers([
+    ['A', 'B'],
+    ['B', 'C'],
+    ['C', 'D']
+], {
+    'A': 10,
+    'B': 20,
+    'C': 30,
+    'D': 40
+},
+    'A', ['C']) == 70
+
+disconnectedUsers([
+    ['A', 'B'],
+    ['B', 'D'],
+    ['A', 'C'],
+    ['C', 'D']
+], {
+    'A': 10,
+    'B': 0,
+    'C': 0,
+    'D': 40
+},
+    'A', ['B']) == 0
+
+disconnectedUsers([
+    ['A', 'B'],
+    ['A', 'C'],
+    ['A', 'D'],
+    ['A', 'E'],
+    ['A', 'F']
+], {
+    'A': 10,
+    'B': 10,
+    'C': 10,
+    'D': 10,
+    'E': 10,
+    'F': 10
+},
+    'C', ['A']) == 50
+
+</pre>
+{% else %}
 <pre class="brush: python">
 disconnected_users([
     ['A', 'B'],
@@ -72,4 +117,5 @@ disconnected_users([
     'C', ['A']) == 50
 
 </pre>
+{% endif %}
 </div>
